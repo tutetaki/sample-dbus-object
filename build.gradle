@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group = 'dev.tutetaki'
+version = '1.0-SNAPSHOT'
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    implementation 'org.slf4j:slf4j-log4j12:2.0.13'
+
+    // Snapshot from branch master (commit 5041727ca38e31db254d60395e898e0a0c2ac5f8)
+    implementation platform('com.github.hypfvieh:dbus-java-bom:5.0.1-SNAPSHOT')
+    implementation 'com.github.hypfvieh:dbus-java-core'
+    implementation 'com.github.hypfvieh:dbus-java-transport-native-unixsocket'
+}
+
+test {
+    useJUnitPlatform()
+}
